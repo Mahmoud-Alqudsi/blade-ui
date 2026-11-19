@@ -1,0 +1,67 @@
+{
+    "name": "mahmoud-alqudsi/blade-ui",
+    "description": "Production-ready Blade components for Laravel 13 with Tailwind CSS v4, Alpine.js, RTL, dark mode, and accessibility support.",
+    "type": "library",
+    "license": "MIT",
+    "homepage": "https://github.com/Mahmoud-Alqudsi/blade-ui",
+    "authors": [
+        {
+            "name": "Mahmoud Al-Qudsi",
+            "email": "mah.alqudsi@gmail.com"
+        }
+    ],
+    "support": {
+        "issues": "https://github.com/Mahmoud-Alqudsi/blade-ui/issues",
+        "source": "https://github.com/Mahmoud-Alqudsi/blade-ui"
+    },
+    "keywords": [
+        "laravel",
+        "blade",
+        "components",
+        "tailwindcss",
+        "alpinejs",
+        "rtl",
+        "dark-mode",
+        "ui"
+    ],
+    "require": {
+        "php": "^8.3",
+        "illuminate/support": "^13.0",
+        "illuminate/view": "^13.0",
+        "illuminate/console": "^13.0",
+        "illuminate/pagination": "^13.0"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^11.0",
+        "pestphp/pest": "^4.0",
+        "pestphp/pest-plugin-laravel": "^4.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "BladeUi\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "BladeUi\\Tests\\": "tests/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "BladeUi\\BladeUiServiceProvider"
+            ]
+        }
+    },
+    "scripts": {
+        "test": "pest"
+    },
+    "config": {
+        "sort-packages": true,
+        "allow-plugins": {
+            "pestphp/pest-plugin": true
+        }
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true
+}
