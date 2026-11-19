@@ -1,0 +1,44 @@
+/*
+ * Blade UI design system (Tailwind CSS v4).
+ * Import this file from app.css immediately after: @import "tailwindcss";
+ * (Added automatically by php artisan blade-ui:install.)
+ */
+
+/* Scan paths are relative to this file so Tailwind picks up package component classes. */
+@source '../components';
+@source '../views';
+
+/* Dark mode is enabled manually through the .dark class on the <html> element. */
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+    --font-sans: 'Tajawal', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji';
+
+    --color-brand-50: #eff6ff;
+    --color-brand-100: #dbeafe;
+    --color-brand-200: #bfdbfe;
+    --color-brand-300: #93c5fd;
+    --color-brand-400: #60a5fa;
+    --color-brand-500: #3b82f6;
+    --color-brand-600: #2563eb;
+    --color-brand-700: #1d4ed8;
+    --color-brand-800: #1e40af;
+    --color-brand-900: #1e3a8a;
+    --color-brand-950: #172554;
+}
+
+@layer base {
+    /* Tailwind v4 uses currentColor for the default border; restore the usual subtle border color. */
+    *,
+    ::after,
+    ::before,
+    ::backdrop,
+    ::file-selector-button {
+        border-color: var(--color-slate-200, currentColor);
+    }
+
+    /* Prevent hidden elements from flashing before Alpine starts. */
+    [x-cloak] {
+        display: none !important;
+    }
+}
