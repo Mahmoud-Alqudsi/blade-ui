@@ -1,0 +1,26 @@
+<?php
+
+// Add these routes to routes/web.php, or merge them with your authentication routes.
+
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Route;
+
+Route::view('/components-demo', 'components-demo');
+
+Route::get('/login', fn () => view('auth.login'))->name('login');
+
+Route::post('/login', function (Request $request) {
+    $credentials = $request->validate([
+        'email' => ['required', 'email'],
+        'password' => ['required'],
+    ]);
+
+    if (Auth::attempt($credentials, $request->boolean('remember'))) {
+        $request->session()->regenerate();
+
+        return redirect()->intended('/');
+    }
+
+    return back()->withErrors(['email' => 'بيانات الدخول غير صحيحة.'])->onlyInput('email');
+});
