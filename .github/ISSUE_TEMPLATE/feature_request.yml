@@ -1,0 +1,20 @@
+name: اقتراح مكوّن أو ميزة
+description: اقترح مكوّنًا جديدًا أو تحسينًا
+labels: [enhancement]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: ما المشكلة التي تحلها؟
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: الشكل المقترح للاستخدام
+      description: كيف تتخيل كتابة المكوّن في Blade؟
+      render: blade
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: بدائل فكرت بها

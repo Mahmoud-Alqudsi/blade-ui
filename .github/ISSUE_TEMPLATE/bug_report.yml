@@ -1,0 +1,45 @@
+name: بلاغ عن خطأ
+description: أبلغ عن سلوك خاطئ في أحد المكونات
+labels: [bug]
+body:
+  - type: textarea
+    id: what
+    attributes:
+      label: ما المشكلة؟
+      description: اشرح ما حدث وما كنت تتوقعه.
+    validations:
+      required: true
+  - type: textarea
+    id: code
+    attributes:
+      label: كود Blade لإعادة الإنتاج
+      description: أقل مثال يُظهر المشكلة.
+      render: blade
+    validations:
+      required: true
+  - type: input
+    id: versions
+    attributes:
+      label: الإصدارات
+      description: Laravel / PHP / Tailwind / Alpine / الحزمة
+      placeholder: "Laravel 13.x, PHP 8.4, Tailwind 4.3, Alpine 3.x, blade-ui 1.0.0"
+    validations:
+      required: true
+  - type: dropdown
+    id: dir
+    attributes:
+      label: اتجاه الصفحة
+      options: [RTL, LTR, كلاهما]
+  - type: dropdown
+    id: theme
+    attributes:
+      label: الوضع
+      options: [فاتح, داكن, كلاهما]
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: قبل الإرسال
+      options:
+        - label: بحثت في الـ Issues ولم أجد بلاغًا مشابهًا
+          required: true
+        - label: جرّبت `blade-ui:install` وتأكدت من تسجيل إضافة `@alpinejs/focus`
