@@ -20,6 +20,9 @@ class BladeUiServiceProvider extends ServiceProvider
         // Package views (demo and pagination): view('blade-ui::demo')
         $this->loadViewsFrom($this->root('resources/views'), 'blade-ui');
 
+        // Translations: __('blade-ui::messages.close')
+        $this->loadTranslationsFrom($this->root('lang'), 'blade-ui');
+
         // Anonymous components: <x-ui.button>, <x-forms.input>, and <x-layouts.guest> without publishing.
         Blade::anonymousComponentPath($this->root('resources/components'));
 
@@ -61,6 +64,10 @@ class BladeUiServiceProvider extends ServiceProvider
         $this->publishes([
             $this->root('resources/views') => resource_path('views/vendor/blade-ui'),
         ], 'blade-ui-views');
+
+        $this->publishes([
+            $this->root('lang') => $this->app->langPath('vendor/blade-ui'),
+        ], 'blade-ui-lang');
 
         $this->publishes([
             $this->root('stubs/login.blade.php') => resource_path('views/auth/login.blade.php'),

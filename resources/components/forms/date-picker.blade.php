@@ -22,17 +22,25 @@
     'hint' => null,
     'min' => null,
     'max' => null,
-    'placeholder' => 'اختر التاريخ',
+    'placeholder' => null,
     'weekStart' => 0,
     'locale' => null,
-    'todayLabel' => 'اليوم',
-    'clearLabel' => 'مسح',
-    'prevLabel' => 'الشهر السابق',
-    'nextLabel' => 'الشهر التالي',
+    'todayLabel' => null,
+    'clearLabel' => null,
+    'prevLabel' => null,
+    'nextLabel' => null,
     'required' => false,
     'disabled' => false,
     'wrapperClass' => null,
 ])
+
+@php
+    $placeholder ??= __('blade-ui::messages.choose_date');
+    $todayLabel ??= __('blade-ui::messages.today');
+    $clearLabel ??= __('blade-ui::messages.clear');
+    $prevLabel ??= __('blade-ui::messages.previous_month');
+    $nextLabel ??= __('blade-ui::messages.next_month');
+@endphp
 
 @php
     $errors ??= new \Illuminate\Support\ViewErrorBag;

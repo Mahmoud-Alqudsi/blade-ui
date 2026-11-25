@@ -13,7 +13,11 @@
 | Close: $dispatch('close-modal-confirm')
 | Traps focus inside the dialog and locks page scrolling (x-trap.noscroll).
 --}}
-@props(['name', 'title' => null, 'maxWidth' => 'md', 'closeable' => true, 'show' => false, 'closeLabel' => 'إغلاق'])
+@props(['name', 'title' => null, 'maxWidth' => 'md', 'closeable' => true, 'show' => false, 'closeLabel' => null])
+
+@php
+    $closeLabel ??= __('blade-ui::messages.close');
+@endphp
 
 @php
     $widthClass = match ($maxWidth) {

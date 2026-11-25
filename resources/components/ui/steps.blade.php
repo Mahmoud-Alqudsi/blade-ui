@@ -10,7 +10,12 @@
 | The current step has aria-current="step"; titles are hidden on small screens while numbers remain.
 | Example: <x-ui.steps :steps="['Account', 'Profile', 'Confirmation']" :current="2" />
 --}}
-@props(['steps' => [], 'current' => 1, 'label' => 'خطوات العملية', 'completedLabel' => 'مكتملة'])
+@props(['steps' => [], 'current' => 1, 'label' => null, 'completedLabel' => null])
+
+@php
+    $label ??= __('blade-ui::messages.steps');
+    $completedLabel ??= __('blade-ui::messages.completed');
+@endphp
 
 @php
     $items = collect($steps)->map(fn ($step) => is_array($step) ? $step : ['title' => $step])->values();

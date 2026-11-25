@@ -6,7 +6,11 @@
 | Props: label (accessible label)
 | Example: <x-ui.theme-toggle />
 --}}
-@props(['label' => 'تبديل الوضع الداكن'])
+@props(['label' => null])
+
+@php
+    $label ??= __('blade-ui::messages.toggle_dark_mode');
+@endphp
 
 <button type="button" aria-label="{{ $label }}"
         x-data="{ dark: document.documentElement.classList.contains('dark') }"

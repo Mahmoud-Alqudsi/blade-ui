@@ -14,10 +14,16 @@
     'paginator',
     'onEachSide' => 1,
     'showSummary' => true,
-    'prevLabel' => 'السابق',
-    'nextLabel' => 'التالي',
-    'navLabel' => 'التنقل بين الصفحات',
+    'prevLabel' => null,
+    'nextLabel' => null,
+    'navLabel' => null,
 ])
+
+@php
+    $prevLabel ??= __('blade-ui::messages.previous');
+    $nextLabel ??= __('blade-ui::messages.next');
+    $navLabel ??= __('blade-ui::messages.pagination');
+@endphp
 
 @php
     $isLengthAware = $paginator instanceof \Illuminate\Contracts\Pagination\LengthAwarePaginator;
@@ -50,7 +56,7 @@
          {{ $attributes->class('flex flex-col items-center justify-between gap-3 sm:flex-row') }}>
         @if ($isLengthAware && $showSummary)
             <p class="text-sm text-slate-600 dark:text-slate-400">
-                عرض {{ $paginator->firstItem() }} إلى {{ $paginator->lastItem() }} من {{ $paginator->total() }}
+                {{ __('blade-ui::messages.showing', ['from' => $paginator->firstItem(), 'to' => $paginator->lastItem(), 'total' => $paginator->total()]) }}
             </p>
         @else
             <span aria-hidden="true"></span>
@@ -76,7 +82,7 @@
                     @elseif ($entry === $current)
                         <span aria-current="page" class="{{ $itemBase }} {{ $currentClass }}">{{ $entry }}</span>
                     @else
-                        <a href="{{ $paginator->url($entry) }}" aria-label="الصفحة {{ $entry }}" class="{{ $itemBase }} {{ $linkClass }}">{{ $entry }}</a>
+                        <a href="{{ $paginator->url($entry) }}" aria-label="{{ __('blade-ui::messages.go_to_page', ['page' => $entry]) }}" class="{{ $itemBase }} {{ $linkClass }}">{{ $entry }}</a>
                     @endif
                 </li>
             @endforeach

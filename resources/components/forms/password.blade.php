@@ -10,14 +10,20 @@
 @props([
     'name' => 'password',
     'id' => null,
-    'label' => 'كلمة المرور',
+    'label' => null,
     'hint' => null,
     'required' => false,
     'disabled' => false,
     'wrapperClass' => null,
-    'showLabel' => 'إظهار كلمة المرور',
-    'hideLabel' => 'إخفاء كلمة المرور',
+    'showLabel' => null,
+    'hideLabel' => null,
 ])
+
+@php
+    $label ??= __('blade-ui::messages.password');
+    $showLabel ??= __('blade-ui::messages.show_password');
+    $hideLabel ??= __('blade-ui::messages.hide_password');
+@endphp
 
 <div x-data="{ reveal: false }" class="w-full">
     <x-forms.input :name="$name" :id="$id" type="password" :label="$label" :hint="$hint"

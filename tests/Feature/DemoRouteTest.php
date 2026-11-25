@@ -8,6 +8,8 @@ class DemoRouteTest extends TestCase
 {
     protected function defineEnvironment($app): void
     {
+        parent::defineEnvironment($app);
+
         $app['config']->set('blade-ui.demo.enabled', true);
     }
 

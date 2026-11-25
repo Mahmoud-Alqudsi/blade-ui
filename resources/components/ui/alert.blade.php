@@ -10,7 +10,11 @@
 | danger and warning use role="alert"; other types use role="status".
 | Example: <x-ui.alert type="success" title="Saved" dismissible>Your details were updated.</x-ui.alert>
 --}}
-@props(['type' => 'info', 'title' => null, 'dismissible' => false, 'closeLabel' => 'إغلاق'])
+@props(['type' => 'info', 'title' => null, 'dismissible' => false, 'closeLabel' => null])
+
+@php
+    $closeLabel ??= __('blade-ui::messages.close');
+@endphp
 
 @php
     $style = match ($type) {

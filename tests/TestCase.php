@@ -10,6 +10,12 @@ abstract class TestCase extends Orchestra
 {
     use InteractsWithViews;
 
+    protected function defineEnvironment($app): void
+    {
+        $app['config']->set('app.locale', 'ar');
+        $app['config']->set('app.fallback_locale', 'en');
+    }
+
     protected function getPackageProviders($app): array
     {
         return [BladeUiServiceProvider::class];

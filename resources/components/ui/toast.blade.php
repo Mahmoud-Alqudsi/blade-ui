@@ -8,7 +8,11 @@
 | Types: info | success | warning | danger
 | Props: closeLabel
 --}}
-@props(['closeLabel' => 'إغلاق'])
+@props(['closeLabel' => null])
+
+@php
+    $closeLabel ??= __('blade-ui::messages.close');
+@endphp
 
 @php
     $styles = [

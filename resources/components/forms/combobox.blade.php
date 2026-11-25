@@ -18,12 +18,17 @@
     'label' => null,
     'hint' => null,
     'options' => [],
-    'placeholder' => 'اختر أو ابحث…',
-    'emptyText' => 'لا توجد نتائج',
+    'placeholder' => null,
+    'emptyText' => null,
     'required' => false,
     'disabled' => false,
     'wrapperClass' => null,
 ])
+
+@php
+    $placeholder ??= __('blade-ui::messages.select_or_search');
+    $emptyText ??= __('blade-ui::messages.no_results');
+@endphp
 
 @php
     $errors ??= new \Illuminate\Support\ViewErrorBag;

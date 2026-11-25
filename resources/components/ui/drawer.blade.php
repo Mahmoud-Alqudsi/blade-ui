@@ -12,7 +12,11 @@
 | Open: $dispatch('open-drawer-filters'); close: $dispatch('close-drawer-filters')
 | Traps focus and locks page scrolling, like the modal component.
 --}}
-@props(['name', 'title' => null, 'side' => 'end', 'width' => 'md', 'closeable' => true, 'show' => false, 'closeLabel' => 'إغلاق'])
+@props(['name', 'title' => null, 'side' => 'end', 'width' => 'md', 'closeable' => true, 'show' => false, 'closeLabel' => null])
+
+@php
+    $closeLabel ??= __('blade-ui::messages.close');
+@endphp
 
 @php
     $widthClass = match ($width) {

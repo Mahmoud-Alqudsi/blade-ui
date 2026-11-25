@@ -9,7 +9,11 @@
 | The separator automatically mirrors in RTL layouts.
 | Example: <x-ui.breadcrumb :items="[['label' => 'Home', 'href' => '/'], ['label' => 'Users']]" />
 --}}
-@props(['items' => [], 'label' => 'مسار التنقل'])
+@props(['items' => [], 'label' => null])
+
+@php
+    $label ??= __('blade-ui::messages.breadcrumb');
+@endphp
 
 <nav aria-label="{{ $label }}" {{ $attributes }}>
     <ol class="flex flex-wrap items-center gap-1.5 text-sm text-slate-500 dark:text-slate-400">

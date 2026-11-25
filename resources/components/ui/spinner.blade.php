@@ -8,7 +8,11 @@
 | Inherits the surrounding text color (currentColor).
 | Example: <x-ui.spinner size="lg" class="text-brand-600" />
 --}}
-@props(['size' => 'md', 'label' => 'جارٍ التحميل'])
+@props(['size' => 'md', 'label' => null])
+
+@php
+    $label ??= __('blade-ui::messages.loading');
+@endphp
 
 @php
     $sizeClass = match ($size) {
