@@ -79,9 +79,9 @@
 
 <{{ $tag }} {{ $attributes->merge($tagAttributes)->class([$base, $variantClass, $sizeClass, 'w-full' => $block]) }}>
     @if ($loading)
-        <x-ui.spinner :size="$spinnerSize" />
+        <x-blade-ui::ui.spinner :size="$spinnerSize" />
     @elseif ($loadingWhen)
-        <x-ui.spinner :size="$spinnerSize" x-show="{{ $loadingWhen }}" x-cloak />
+        <x-blade-ui::ui.spinner :size="$spinnerSize" x-show="{{ $loadingWhen }}" x-cloak />
     @endif
 
     @if ($hasLeft)

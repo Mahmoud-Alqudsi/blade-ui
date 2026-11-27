@@ -70,7 +70,7 @@
 
 <div @class(['w-full', $wrapperClass])>
     @if ($label)
-        <x-forms.label :for="$id" :required="$required" class="mb-1.5">{{ $label }}</x-forms.label>
+        <x-blade-ui::forms.label :for="$id" :required="$required" class="mb-1.5">{{ $label }}</x-blade-ui::forms.label>
     @endif
 
     <div class="relative"
@@ -170,7 +170,7 @@
             <span x-text="displayLabel || @js($placeholder)"
                   x-bind:class="displayLabel ? 'text-slate-900 dark:text-slate-100' : 'text-slate-500 dark:text-slate-400'"
                   class="truncate"></span>
-            <x-ui.icon name="calendar" size="size-5" class="text-slate-500 dark:text-slate-400" />
+            <x-blade-ui::ui.icon name="calendar" size="size-5" class="text-slate-500 dark:text-slate-400" />
         </button>
 
         <div x-show="open" x-cloak id="{{ $id }}-calendar" role="dialog" aria-label="{{ $label ?? $placeholder }}"
@@ -179,11 +179,11 @@
              class="absolute start-0 z-40 mt-2 w-72 origin-top rounded-xl border border-slate-200 bg-white p-3 shadow-lg dark:border-slate-700 dark:bg-slate-900">
             <div class="mb-2 flex items-center justify-between gap-2">
                 <button type="button" x-on:click="shift(-1)" aria-label="{{ $prevLabel }}" class="{{ $navButton }}">
-                    <x-ui.icon name="chevron-left" size="size-4" class="rtl:rotate-180" />
+                    <x-blade-ui::ui.icon name="chevron-left" size="size-4" class="rtl:rotate-180" />
                 </button>
                 <p class="text-sm font-semibold text-slate-900 dark:text-slate-100" aria-live="polite" x-text="monthLabel"></p>
                 <button type="button" x-on:click="shift(1)" aria-label="{{ $nextLabel }}" class="{{ $navButton }}">
-                    <x-ui.icon name="chevron-right" size="size-4" class="rtl:rotate-180" />
+                    <x-blade-ui::ui.icon name="chevron-right" size="size-4" class="rtl:rotate-180" />
                 </button>
             </div>
 

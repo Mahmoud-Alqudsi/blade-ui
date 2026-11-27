@@ -67,7 +67,7 @@
             @if ($closeable)
                 <button type="button" x-on:click="show = false" aria-label="{{ $closeLabel }}"
                         class="-m-1.5 ms-auto rounded-md p-1.5 text-slate-500 transition hover:bg-slate-100 hover:text-slate-700 focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-brand-500 dark:hover:bg-slate-800 dark:hover:text-slate-200">
-                    <x-ui.icon name="x-mark" />
+                    <x-blade-ui::ui.icon name="x-mark" />
                 </button>
             @endif
         </div>

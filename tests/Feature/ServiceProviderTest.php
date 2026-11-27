@@ -6,7 +6,8 @@ use Illuminate\Support\Facades\Route;
 it('merges the default configuration', function () {
     expect(config('blade-ui.rtl_locales'))->toContain('ar')
         ->and(config('blade-ui.pagination.default'))->toBeFalse()
-        ->and(config('blade-ui.vite'))->toBe(['resources/css/app.css', 'resources/js/app.js']);
+        ->and(config('blade-ui.vite'))->toBe(['resources/css/app.css', 'resources/js/app.js'])
+        ->and(config('blade-ui.prefix'))->toBeNull();
 });
 
 it('resolves package components without publishing anything', function () {

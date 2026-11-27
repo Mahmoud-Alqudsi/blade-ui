@@ -66,11 +66,11 @@
             <li>
                 @if ($paginator->onFirstPage())
                     <a role="link" aria-disabled="true" aria-label="{{ $prevLabel }}" class="{{ $itemBase }} {{ $disabledClass }}">
-                        <x-ui.icon name="chevron-left" size="size-4" class="rtl:rotate-180" />
+                        <x-blade-ui::ui.icon name="chevron-left" size="size-4" class="rtl:rotate-180" />
                     </a>
                 @else
                     <a href="{{ $paginator->previousPageUrl() }}" rel="prev" aria-label="{{ $prevLabel }}" class="{{ $itemBase }} {{ $linkClass }}">
-                        <x-ui.icon name="chevron-left" size="size-4" class="rtl:rotate-180" />
+                        <x-blade-ui::ui.icon name="chevron-left" size="size-4" class="rtl:rotate-180" />
                     </a>
                 @endif
             </li>
@@ -90,11 +90,11 @@
             <li>
                 @if ($paginator->hasMorePages())
                     <a href="{{ $paginator->nextPageUrl() }}" rel="next" aria-label="{{ $nextLabel }}" class="{{ $itemBase }} {{ $linkClass }}">
-                        <x-ui.icon name="chevron-right" size="size-4" class="rtl:rotate-180" />
+                        <x-blade-ui::ui.icon name="chevron-right" size="size-4" class="rtl:rotate-180" />
                     </a>
                 @else
                     <a role="link" aria-disabled="true" aria-label="{{ $nextLabel }}" class="{{ $itemBase }} {{ $disabledClass }}">
-                        <x-ui.icon name="chevron-right" size="size-4" class="rtl:rotate-180" />
+                        <x-blade-ui::ui.icon name="chevron-right" size="size-4" class="rtl:rotate-180" />
                     </a>
                 @endif
             </li>

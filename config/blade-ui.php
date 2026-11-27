@@ -25,6 +25,20 @@ return [
 
     /*
     |--------------------------------------------------------------------------
+    | Component prefix
+    |--------------------------------------------------------------------------
+    | null  : <x-ui.button> and <x-forms.input>           (default)
+    | 'bui' : <x-bui::button> and <x-bui::input>          (plus grouped <x-bui::ui.button>)
+    |
+    | Use a prefix to avoid collisions with application components that share
+    | the same names (e.g. components/ui/button.blade.php). Internal references
+    | between package components always resolve through a fixed private namespace
+    | and are unaffected by this setting. Update your templates if you change it.
+    */
+    'prefix' => env('BLADE_UI_PREFIX'),
+
+    /*
+    |--------------------------------------------------------------------------
     | Pagination
     |--------------------------------------------------------------------------
     | true: makes ->links() use the ui/pagination component throughout the application.

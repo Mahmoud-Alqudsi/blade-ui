@@ -13,7 +13,7 @@
 
 <div {{ $attributes->class('flex flex-col items-center justify-center gap-3 rounded-2xl border border-dashed border-slate-300 p-10 text-center dark:border-slate-700') }}>
     <span class="inline-flex size-12 items-center justify-center rounded-full bg-slate-100 text-slate-500 dark:bg-slate-800 dark:text-slate-400">
-        <x-ui.icon :name="$icon" size="size-6" />
+        <x-blade-ui::ui.icon :name="$icon" size="size-6" />
     </span>
 
     <h3 class="font-semibold text-slate-900 dark:text-slate-100">{{ $title }}</h3>

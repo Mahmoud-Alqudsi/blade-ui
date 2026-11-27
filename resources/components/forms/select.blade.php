@@ -46,7 +46,7 @@
 
 <div @class(['w-full', $wrapperClass])>
     @if ($label)
-        <x-forms.label :for="$id" :required="$required" class="mb-1.5">{{ $label }}</x-forms.label>
+        <x-blade-ui::forms.label :for="$id" :required="$required" class="mb-1.5">{{ $label }}</x-blade-ui::forms.label>
     @endif
 
     <div class="relative">
@@ -70,7 +70,7 @@
         </select>
 
         <span class="pointer-events-none absolute inset-y-0 end-0 flex items-center pe-3 text-slate-500 dark:text-slate-400">
-            <x-ui.icon name="chevron-down" size="size-4" />
+            <x-blade-ui::ui.icon name="chevron-down" size="size-4" />
         </span>
     </div>
 

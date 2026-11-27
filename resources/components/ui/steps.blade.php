@@ -39,7 +39,7 @@
                         'border-2 border-slate-300 text-slate-500 dark:border-slate-700 dark:text-slate-400' => $state === 'upcoming',
                     ])>
                         @if ($state === 'complete')
-                            <x-ui.icon name="check" size="size-5" stroke="2.5" />
+                            <x-blade-ui::ui.icon name="check" size="size-5" stroke="2.5" />
                             <span class="sr-only">{{ $completedLabel }}</span>
                         @else
                             {{ $number }}

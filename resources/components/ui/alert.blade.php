@@ -50,7 +50,7 @@
      @endif
      role="{{ $role }}"
      {{ $attributes->class(['flex items-start gap-3 rounded-xl border p-4 text-sm', $style['box']]) }}>
-    <x-ui.icon :name="$style['name']" :class="$style['icon']" />
+    <x-blade-ui::ui.icon :name="$style['name']" :class="$style['icon']" />
 
     <div class="min-w-0 flex-1 space-y-1">
         @if ($title)
@@ -62,7 +62,7 @@
     @if ($dismissible)
         <button type="button" x-on:click="show = false" aria-label="{{ $closeLabel }}"
                 class="-m-1.5 rounded-md p-1.5 opacity-70 transition hover:opacity-100 focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-current">
-            <x-ui.icon name="x-mark" size="size-4" />
+            <x-blade-ui::ui.icon name="x-mark" size="size-4" />
         </button>
     @endif
 </div>

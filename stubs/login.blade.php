@@ -1,6 +1,10 @@
 {{--
 | Sign-in page built from package components without duplicating HTML.
 | Expected route: route('login') (GET displays the page; POST handles the form).
+|
+| Note: This template uses the default <x-ui.*>, <x-forms.*>, and <x-layouts.*> tags.
+| If you configured blade-ui.prefix (e.g. "bui"), rewrite the tags after publishing:
+|   sed -i -E 's#<(/?)x-(ui|forms|layouts)\.#<\1x-bui::\2.#g' resources/views/auth/login.blade.php
 --}}
 <x-layouts.guest title="تسجيل الدخول">
     <x-ui.card padding="lg" class="w-full max-w-md">

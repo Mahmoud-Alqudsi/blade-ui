@@ -27,7 +27,7 @@
     };
 @endphp
 
-<x-ui.card {{ $attributes }}>
+<x-blade-ui::ui.card {{ $attributes }}>
     <div class="flex items-start justify-between gap-4">
         <div class="min-w-0">
             <p class="truncate text-sm font-medium text-slate-500 dark:text-slate-400">{{ $label }}</p>
@@ -36,7 +36,7 @@
 
         @if ($icon)
             <span class="inline-flex size-10 shrink-0 items-center justify-center rounded-xl bg-brand-50 text-brand-600 dark:bg-brand-500/10 dark:text-brand-300">
-                <x-ui.icon :name="$icon" />
+                <x-blade-ui::ui.icon :name="$icon" />
             </span>
         @endif
     </div>
@@ -46,7 +46,7 @@
             @if ($change)
                 <span class="inline-flex items-center gap-1 font-medium {{ $trendClass }}">
                     @if ($trendIcon)
-                        <x-ui.icon :name="$trendIcon" size="size-4" stroke="2" />
+                        <x-blade-ui::ui.icon :name="$trendIcon" size="size-4" stroke="2" />
                     @endif
                     {{ $change }}
                 </span>
@@ -56,4 +56,4 @@
             @endif
         </p>
     @endif
-</x-ui.card>
+</x-blade-ui::ui.card>

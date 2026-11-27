@@ -44,7 +44,7 @@
 
 <div @class(['w-full', $wrapperClass])>
     @if ($label)
-        <x-forms.label :for="$id" :required="$required" class="mb-1.5">{{ $label }}</x-forms.label>
+        <x-blade-ui::forms.label :for="$id" :required="$required" class="mb-1.5">{{ $label }}</x-blade-ui::forms.label>
     @endif
 
     <input {{ $attributes->merge([

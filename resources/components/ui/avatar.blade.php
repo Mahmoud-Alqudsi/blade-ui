@@ -51,7 +51,7 @@
         @if ($initials)
             {{ $initials }}
         @else
-            <x-ui.icon name="user" size="size-1/2" />
+            <x-blade-ui::ui.icon name="user" size="size-1/2" />
         @endif
     </span>
 

@@ -30,7 +30,7 @@
                 @endif
 
                 @unless ($loop->last)
-                    <x-ui.icon name="chevron-right" size="size-4" class="rtl:rotate-180" />
+                    <x-blade-ui::ui.icon name="chevron-right" size="size-4" class="rtl:rotate-180" />
                 @endunless
             </li>
         @endforeach

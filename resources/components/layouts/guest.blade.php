@@ -39,13 +39,13 @@
 </head>
 <body class="min-h-screen bg-slate-50 font-sans text-slate-900 antialiased dark:bg-slate-950 dark:text-slate-100">
     <div class="absolute end-4 top-4">
-        <x-ui.theme-toggle />
+        <x-blade-ui::ui.theme-toggle />
     </div>
 
     <main @class(['min-h-screen p-4', 'flex items-center justify-center' => $centered])>
         {{ $slot }}
     </main>
 
-    <x-ui.toast />
+    <x-blade-ui::ui.toast />
 </body>
 </html>

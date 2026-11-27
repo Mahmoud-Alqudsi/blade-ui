@@ -62,7 +62,7 @@
 
 <div @class(['w-full', $wrapperClass])>
     @if ($label)
-        <x-forms.label :for="$id" :required="$required" class="mb-1.5">{{ $label }}</x-forms.label>
+        <x-blade-ui::forms.label :for="$id" :required="$required" class="mb-1.5">{{ $label }}</x-blade-ui::forms.label>
     @endif
 
     <div class="relative"
@@ -131,7 +131,7 @@
                ])->class($fieldClass) }}>
 
         <span class="pointer-events-none absolute inset-y-0 end-0 flex items-center pe-3 text-slate-500 dark:text-slate-400">
-            <x-ui.icon name="chevron-down" size="size-4" />
+            <x-blade-ui::ui.icon name="chevron-down" size="size-4" />
         </span>
 
         <div x-show="open" x-cloak
@@ -145,7 +145,7 @@
                         x-bind:class="active === index ? 'bg-brand-50 text-brand-700 dark:bg-brand-500/10 dark:text-brand-300' : 'text-slate-700 dark:text-slate-200'"
                         class="flex cursor-pointer items-center justify-between gap-2 rounded-lg px-3 py-2 text-sm">
                         <span x-text="option.label"></span>
-                        <x-ui.icon name="check" size="size-4" x-show="option.value === selected" />
+                        <x-blade-ui::ui.icon name="check" size="size-4" x-show="option.value === selected" />
                     </li>
                 </template>
             </ul>

@@ -46,7 +46,7 @@
             </div>
             <button type="button" x-on:click="remove(item.id)" aria-label="{{ $closeLabel }}"
                     class="-m-1 rounded-md p-1 text-slate-400 hover:text-slate-700 focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-brand-500 dark:hover:text-slate-200">
-                <x-ui.icon name="x-mark" size="size-4" />
+                <x-blade-ui::ui.icon name="x-mark" size="size-4" />
             </button>
         </div>
     </template>
