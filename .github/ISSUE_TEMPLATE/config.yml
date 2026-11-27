@@ -1,5 +1,5 @@
 blank_issues_enabled: false
 contact_links:
-  - name: سؤال أو نقاش
+  - name: Question or discussion
     url: https://github.com/Mahmoud-Alqudsi/blade-ui/discussions
-    about: للأسئلة العامة وطلب المساعدة استخدم النقاشات بدل Issues.
+    about: Please use GitHub Discussions instead of Issues for general questions and help requests.

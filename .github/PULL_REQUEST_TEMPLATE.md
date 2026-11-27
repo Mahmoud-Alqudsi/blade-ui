@@ -1,17 +1,21 @@
-## ما الذي يغيّره هذا الطلب؟
+## What does this PR change?
 
-<!-- اشرح السبب والتغيير باختصار -->
+<!-- Briefly explain the motivation and the change -->
 
-## نوع التغيير
+## Type of change
 
-- [ ] إصلاح خطأ
-- [ ] مكوّن أو ميزة جديدة
-- [ ] تحسين وصولية / RTL / وضع داكن
-- [ ] توثيق أو اختبارات
+- [ ] Bug fix
+- [ ] New component or feature
+- [ ] Accessibility / RTL / dark mode improvement
+- [ ] Documentation or tests
 
-## قائمة التحقق
+## Checklist
 
-- [ ] أضفت أو حدّثت اختبارات Pest و`composer test` ينجح
-- [ ] الأصناف منطقية (RTL) ولها مقابل `dark:`
-- [ ] أضفت تعليق الشرح العربي (الخصائص والمثال) أعلى الملف
-- [ ] حدّثت `CHANGELOG.md` (و`README.md` عند إضافة مكوّن)
+- [ ] Added or updated Pest tests and `composer test` passes
+- [ ] Classes use logical (RTL-safe) utilities and include `dark:` variants
+- [ ] For interactive components: added a fixture page, Playwright spec, and axe scenario (`npm run browser`)
+- [ ] Changed colors? `npm run audit:contrast` passes
+- [ ] Used `->twClass(` and private internal references `<x-blade-ui::…>` (enforced by tests)
+- [ ] No hard-coded UI strings: added keys to both `lang/ar` and `lang/en`
+- [ ] Added the English header comment (props and usage example) at the top of the file
+- [ ] Updated `CHANGELOG.md` (and `README.md` when adding a component)

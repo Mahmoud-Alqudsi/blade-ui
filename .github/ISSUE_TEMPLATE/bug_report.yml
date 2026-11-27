@@ -1,45 +1,45 @@
-name: بلاغ عن خطأ
-description: أبلغ عن سلوك خاطئ في أحد المكونات
+name: Bug report
+description: Report unexpected behavior in a component
 labels: [bug]
 body:
   - type: textarea
     id: what
     attributes:
-      label: ما المشكلة؟
-      description: اشرح ما حدث وما كنت تتوقعه.
+      label: What happened?
+      description: Explain what happened and what you expected instead.
     validations:
       required: true
   - type: textarea
     id: code
     attributes:
-      label: كود Blade لإعادة الإنتاج
-      description: أقل مثال يُظهر المشكلة.
+      label: Blade code to reproduce
+      description: Minimal example reproducing the issue.
       render: blade
     validations:
       required: true
   - type: input
     id: versions
     attributes:
-      label: الإصدارات
-      description: Laravel / PHP / Tailwind / Alpine / الحزمة
-      placeholder: "Laravel 13.x, PHP 8.4, Tailwind 4.3, Alpine 3.x, blade-ui 1.0.0"
+      label: Versions
+      description: Laravel / PHP / Tailwind / Alpine / package
+      placeholder: "Laravel 13.x, PHP 8.4, Tailwind 4.3, Alpine 3.x, blade-ui 1.1.0"
     validations:
       required: true
   - type: dropdown
     id: dir
     attributes:
-      label: اتجاه الصفحة
-      options: [RTL, LTR, كلاهما]
+      label: Text direction
+      options: [RTL, LTR, Both]
   - type: dropdown
     id: theme
     attributes:
-      label: الوضع
-      options: [فاتح, داكن, كلاهما]
+      label: Theme
+      options: [Light, Dark, Both]
   - type: checkboxes
     id: checks
     attributes:
-      label: قبل الإرسال
+      label: Before submitting
       options:
-        - label: بحثت في الـ Issues ولم أجد بلاغًا مشابهًا
+        - label: I searched existing issues and did not find a duplicate
           required: true
-        - label: جرّبت `blade-ui:install` وتأكدت من تسجيل إضافة `@alpinejs/focus`
+        - label: I ran `blade-ui:install` and verified that `@alpinejs/focus` is registered

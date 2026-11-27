@@ -28,7 +28,7 @@ class InstallCommand extends Command
         $import = "@import '{$this->relativeImportPath($cssPath)}';";
 
         if (! is_file($cssPath)) {
-            $this->components->warn("لم يُعثر على {$cssPath}. أضف السطر التالي يدويًا بعد استيراد tailwindcss:");
+            $this->components->warn("{$cssPath} was not found. Add the following line manually after your tailwindcss import:");
             $this->line("  {$import}");
 
             return;
@@ -37,7 +37,7 @@ class InstallCommand extends Command
         $css = (string) file_get_contents($cssPath);
 
         if (str_contains($css, 'blade-ui.css')) {
-            $this->components->info('ملف CSS مربوط بالحزمة مسبقًا.');
+            $this->components->info('The CSS file is already connected to Blade UI.');
 
             return;
         }
@@ -54,14 +54,14 @@ class InstallCommand extends Command
         );
 
         if ($count === 0 || $updated === null) {
-            $this->components->warn('لم أجد السطر @import "tailwindcss". أضف السطر التالي يدويًا بعده مباشرة:');
+            $this->components->warn('Could not find @import "tailwindcss". Add the following line right after it manually:');
             $this->line("  {$import}");
 
             return;
         }
 
         file_put_contents($cssPath, $updated);
-        $this->components->info("تمت إضافة استيراد الحزمة إلى {$cssPath}");
+        $this->components->info("Added the package stylesheet import to {$cssPath}");
     }
 
     protected function checkNodePackages(): void
@@ -73,23 +73,23 @@ class InstallCommand extends Command
         $missing = array_values(array_filter($this->nodePackages, fn (string $name) => ! isset($declared[$name])));
 
         if ($missing === []) {
-            $this->components->info('حزم npm المطلوبة موجودة في package.json.');
+            $this->components->info('All required npm packages are present in package.json.');
 
             return;
         }
 
-        $this->components->warn('حزم npm ناقصة. نفّذ:');
+        $this->components->warn('Missing npm packages. Run:');
         $this->line('  npm install '.implode(' ', $missing));
     }
 
     protected function printNextSteps(): void
     {
         $this->newLine();
-        $this->components->info('الخطوة الأخيرة: سجّل إضافة Focus في resources/js/app.js (قبل Alpine.start()):');
+        $this->components->info('Next step: register the Focus plugin in resources/js/app.js (before Alpine.start()):');
         $this->line("  import focus from '@alpinejs/focus';");
         $this->line('  Alpine.plugin(focus);');
         $this->newLine();
-        $this->line('ثم شغّل npm run dev. ولعرض دليل المكونات افتح /'.config('blade-ui.demo.path', 'components-demo').' (البيئة المحلية).');
+        $this->line('Then run npm run dev. To view the component showcase, open /'.config('blade-ui.demo.path', 'components-demo').' (in the local environment).');
     }
 
     /** Relative path from the CSS file directory to blade-ui.css in vendor. */

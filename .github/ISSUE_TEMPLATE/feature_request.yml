@@ -1,20 +1,22 @@
-name: اقتراح مكوّن أو ميزة
-description: اقترح مكوّنًا جديدًا أو تحسينًا
+name: Feature or component request
+description: Suggest a new component or enhancement
 labels: [enhancement]
 body:
   - type: textarea
     id: problem
     attributes:
-      label: ما المشكلة التي تحلها؟
+      label: What problem does this solve?
     validations:
       required: true
   - type: textarea
     id: proposal
     attributes:
-      label: الشكل المقترح للاستخدام
-      description: كيف تتخيل كتابة المكوّن في Blade؟
+      label: Proposed usage
+      description: How would you like to write the component in Blade?
       render: blade
+    validations:
+      required: true
   - type: textarea
     id: alternatives
     attributes:
-      label: بدائل فكرت بها
+      label: Alternatives considered
