@@ -26,6 +26,12 @@ it('never references sibling components through public names', function () use (
     }
 });
 
+it('uses twClass instead of class on attribute bags', function () use ($componentSources) {
+    foreach ($componentSources() as $path => $source) {
+        expect(preg_match('/->class\(/', $source))
+            ->toBe(0, basename($path).' uses ->class(; use ->twClass( so class conflict resolution applies.');
+    }
+});
 
 it('keeps component names unique across groups so flat prefixed names never collide', function () use ($root) {
     $names = [];

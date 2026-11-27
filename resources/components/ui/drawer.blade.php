@@ -57,7 +57,7 @@
          x-transition:enter-start="{{ $hiddenClass }}" x-transition:enter-end="translate-x-0"
          x-transition:leave="transition ease-in duration-150 motion-reduce:transition-none"
          x-transition:leave-start="translate-x-0" x-transition:leave-end="{{ $hiddenClass }}"
-         {{ $attributes->class(['fixed inset-y-0 flex w-full flex-col bg-white shadow-xl dark:bg-slate-900 dark:text-slate-100', $widthClass, $sideClass]) }}>
+         {{ $attributes->twClass(['fixed inset-y-0 flex w-full flex-col bg-white shadow-xl dark:bg-slate-900 dark:text-slate-100', $widthClass, $sideClass]) }}>
 
         <div class="flex items-start justify-between gap-4 border-b border-slate-200 px-5 py-4 dark:border-slate-800">
             @if ($title)

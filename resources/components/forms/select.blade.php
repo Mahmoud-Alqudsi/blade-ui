@@ -57,7 +57,7 @@
             'disabled' => $disabled,
             'aria-invalid' => $hasError ? 'true' : null,
             'aria-describedby' => $describedBy ?: null,
-        ])->class($fieldClass) }}>
+        ])->twClass($fieldClass) }}>
             @if ($placeholder !== null)
                 <option value="" @selected($current === '')>{{ $placeholder }}</option>
             @endif

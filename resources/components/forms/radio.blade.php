@@ -44,7 +44,7 @@
             'disabled' => $disabled,
             'aria-invalid' => $hasError ? 'true' : null,
             'aria-describedby' => $describedBy ?: null,
-        ])->class([
+        ])->twClass([
             'mt-0.5 size-4 shrink-0 rounded-full border bg-white text-brand-600 transition-colors',
             'focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-brand-500 focus-visible:ring-offset-2 dark:focus-visible:ring-offset-slate-900',
             'disabled:cursor-not-allowed disabled:opacity-60',

@@ -50,7 +50,7 @@
          x-on:keydown.arrow-down.prevent="$focus.within($refs.panel).wrap().next()"
          x-on:keydown.arrow-up.prevent="$focus.within($refs.panel).wrap().previous()"
          x-on:keydown.tab="open = false"
-         {{ $attributes->class(['absolute z-40 mt-2 origin-top rounded-xl border border-slate-200 bg-white p-1 shadow-lg dark:border-slate-700 dark:bg-slate-900', $width, $alignClass]) }}>
+         {{ $attributes->twClass(['absolute z-40 mt-2 origin-top rounded-xl border border-slate-200 bg-white p-1 shadow-lg dark:border-slate-700 dark:bg-slate-900', $width, $alignClass]) }}>
         {{ $slot }}
     </div>
 </div>

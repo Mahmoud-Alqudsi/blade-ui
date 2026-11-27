@@ -31,7 +31,7 @@
          },
          step(direction) { this.go(this.keys.indexOf(this.active) + direction); },
      }"
-     {{ $attributes->class('w-full') }}>
+     {{ $attributes->twClass('w-full') }}>
     <div role="tablist" class="flex gap-1 overflow-x-auto border-b border-slate-200 dark:border-slate-800">
         @foreach ($items as $key => $label)
             <button type="button" role="tab" id="{{ $uid }}-tab-{{ $key }}"

@@ -56,7 +56,7 @@
         'disabled' => $disabled,
         'aria-invalid' => $hasError ? 'true' : null,
         'aria-describedby' => $describedBy ?: null,
-    ])->class($fieldClass) }}>
+    ])->twClass($fieldClass) }}>
 
     @if ($key)
         @error($key)

@@ -77,7 +77,7 @@
     $hasRight = isset($iconRight) && $iconRight->isNotEmpty();
 @endphp
 
-<{{ $tag }} {{ $attributes->merge($tagAttributes)->class([$base, $variantClass, $sizeClass, 'w-full' => $block]) }}>
+<{{ $tag }} {{ $attributes->merge($tagAttributes)->twClass([$base, $variantClass, $sizeClass, 'w-full' => $block]) }}>
     @if ($loading)
         <x-blade-ui::ui.spinner :size="$spinnerSize" />
     @elseif ($loadingWhen)

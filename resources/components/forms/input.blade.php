@@ -74,7 +74,7 @@
             'disabled' => $disabled,
             'aria-invalid' => $hasError ? 'true' : null,
             'aria-describedby' => $describedBy ?: null,
-        ])->class($fieldClass) }}>
+        ])->twClass($fieldClass) }}>
 
         @if ($hasRight)
             <span class="absolute inset-y-0 end-0 flex items-center pe-3 text-slate-500 dark:text-slate-400">{{ $iconRight }}</span>

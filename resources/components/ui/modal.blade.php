@@ -57,7 +57,7 @@
          x-transition:enter-end="translate-y-0 opacity-100 sm:scale-100"
          x-transition:leave="transition ease-in duration-150 motion-reduce:transition-none"
          x-transition:leave-start="opacity-100 sm:scale-100" x-transition:leave-end="opacity-0 sm:scale-95"
-         {{ $attributes->class(['relative w-full rounded-2xl bg-white shadow-xl dark:bg-slate-900 dark:text-slate-100', $widthClass]) }}>
+         {{ $attributes->twClass(['relative w-full rounded-2xl bg-white shadow-xl dark:bg-slate-900 dark:text-slate-100', $widthClass]) }}>
 
         @if ($title || $closeable)
             <div class="flex items-start justify-between gap-4 px-6 pt-5">

@@ -32,7 +32,7 @@
     $labelId = 'progress-'.\Illuminate\Support\Str::random(6);
 @endphp
 
-<div {{ $attributes->class('w-full') }}>
+<div {{ $attributes->twClass('w-full') }}>
     @if ($label || $showValue)
         <div class="mb-1.5 flex items-center justify-between text-sm">
             @if ($label)

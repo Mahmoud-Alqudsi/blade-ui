@@ -53,7 +53,7 @@
         'disabled' => $disabled,
         'aria-invalid' => $hasError ? 'true' : null,
         'aria-describedby' => $describedBy ?: null,
-    ])->class($fieldClass) }}>{{ $current ?? (string) $slot }}</textarea>
+    ])->twClass($fieldClass) }}>{{ $current ?? (string) $slot }}</textarea>
 
     @if ($key)
         @error($key)

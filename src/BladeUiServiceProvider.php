@@ -3,11 +3,17 @@
 namespace BladeUi;
 
 use BladeUi\Console\InstallCommand;
+use BladeUi\Support\ClassMerger;
+use BladeUi\Support\PassthroughMerger;
 use BladeUi\Support\TagPrefixer;
+use BladeUi\Support\TailwindClassMerger;
+use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Pagination\Paginator;
+use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\ServiceProvider;
+use Illuminate\View\ComponentAttributeBag;
 
 class BladeUiServiceProvider extends ServiceProvider
 {
@@ -23,6 +29,8 @@ class BladeUiServiceProvider extends ServiceProvider
     public function register(): void
     {
         $this->mergeConfigFrom($this->root('config/blade-ui.php'), 'blade-ui');
+
+        $this->app->singleton(ClassMerger::class, fn (Application $app) => $this->makeClassMerger($app));
     }
 
     public function boot(): void
@@ -34,6 +42,7 @@ class BladeUiServiceProvider extends ServiceProvider
         $this->loadTranslationsFrom($this->root('lang'), 'blade-ui');
 
         $this->registerComponents();
+        $this->registerClassMerging();
 
         if (config('blade-ui.pagination.default')) {
             Paginator::defaultView('blade-ui::pagination');
@@ -93,6 +102,44 @@ class BladeUiServiceProvider extends ServiceProvider
         }
 
         return $components;
+    }
+
+    /**
+     * Adds $attributes->twClass([...]) to component attribute bags: merges component classes
+     * with caller classes and resolves conflicts (caller wins) via ClassMerger.
+     */
+    protected function registerClassMerging(): void
+    {
+        // Fail early with a clear message if class merging is explicitly required without the package installed.
+        TailwindClassMerger::shouldUse(config('blade-ui.merge_classes', 'auto'), TailwindClassMerger::isInstalled());
+
+        ComponentAttributeBag::macro('twClass', function ($classList) {
+            /** @var ComponentAttributeBag $this */
+            $merged = app(ClassMerger::class)->merge(
+                Arr::toCssClasses(Arr::wrap($classList)),
+                (string) $this->get('class', '')
+            );
+
+            $attributes = $this->getAttributes();
+
+            if ($merged === '') {
+                unset($attributes['class']);
+            } else {
+                $attributes['class'] = $merged;
+            }
+
+            return new static($attributes);
+        });
+    }
+
+    protected function makeClassMerger(Application $app): ClassMerger
+    {
+        $useTailwind = TailwindClassMerger::shouldUse(
+            config('blade-ui.merge_classes', 'auto'),
+            TailwindClassMerger::isInstalled()
+        );
+
+        return $useTailwind ? TailwindClassMerger::make($app) : new PassthroughMerger;
     }
 
     protected function registerDemoRoute(): void

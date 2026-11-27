@@ -9,8 +9,9 @@ jobs:
       fail-fast: false
       matrix:
         php: ['8.3', '8.4', '8.5']
+        merge: ['with-tailwind-merge', 'without-tailwind-merge']
 
-    name: PHP ${{ matrix.php }}
+    name: PHP ${{ matrix.php }} (${{ matrix.merge }})
 
     steps:
       - uses: actions/checkout@v4
@@ -19,6 +20,10 @@ jobs:
         with:
           php-version: ${{ matrix.php }}
           coverage: none
+
+      - name: Remove the optional merge package
+        if: matrix.merge == 'without-tailwind-merge'
+        run: composer remove stamat/tailwind-merge-php --dev --no-update
 
       - run: composer update --prefer-dist --no-interaction --no-progress
 

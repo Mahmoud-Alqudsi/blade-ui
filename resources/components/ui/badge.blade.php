@@ -23,7 +23,7 @@
     $sizeClass = $size === 'sm' ? 'px-2 py-0.5 text-xs' : 'px-2.5 py-1 text-xs';
 @endphp
 
-<span {{ $attributes->class(['inline-flex items-center gap-1.5 rounded-full font-medium ring-1 ring-inset', $variantClass, $sizeClass]) }}>
+<span {{ $attributes->twClass(['inline-flex items-center gap-1.5 rounded-full font-medium ring-1 ring-inset', $variantClass, $sizeClass]) }}>
     @if ($dot)
         <span class="size-1.5 rounded-full bg-current" aria-hidden="true"></span>
     @endif

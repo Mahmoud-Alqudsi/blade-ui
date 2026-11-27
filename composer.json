@@ -34,7 +34,11 @@
     "require-dev": {
         "orchestra/testbench": "^11.0",
         "pestphp/pest": "^4.0",
-        "pestphp/pest-plugin-laravel": "^4.0"
+        "pestphp/pest-plugin-laravel": "^4.0",
+        "stamat/tailwind-merge-php": "^1.0"
+    },
+    "suggest": {
+        "stamat/tailwind-merge-php": "Resolves Tailwind CSS v4 class conflicts when passing custom classes to components (enabled automatically when installed)."
     },
     "autoload": {
         "psr-4": {

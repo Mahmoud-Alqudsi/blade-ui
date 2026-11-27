@@ -33,7 +33,7 @@
     $hasFooter = isset($footer) && $footer->isNotEmpty();
 @endphp
 
-<div {{ $attributes->class([
+<div {{ $attributes->twClass([
     'rounded-2xl border border-slate-200 bg-white text-slate-900 shadow-sm',
     'dark:border-slate-800 dark:bg-slate-900 dark:text-slate-100',
     'transition-shadow duration-200 hover:shadow-lg motion-reduce:transition-none' => $hoverable,

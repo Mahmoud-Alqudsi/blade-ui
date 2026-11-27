@@ -15,11 +15,11 @@
 @endphp
 
 @if ($shape === 'text')
-    <div aria-hidden="true" {{ $attributes->class('w-full space-y-2.5') }}>
+    <div aria-hidden="true" {{ $attributes->twClass('w-full space-y-2.5') }}>
         @for ($i = 1; $i <= $lines; $i++)
             <div @class([$base, 'h-3.5 rounded-md', 'w-3/4' => $i === $lines && $lines > 1, 'w-full' => ! ($i === $lines && $lines > 1)])></div>
         @endfor
     </div>
 @else
-    <div aria-hidden="true" {{ $attributes->class([$base, $shape === 'circle' ? 'size-10 rounded-full' : 'h-20 w-full rounded-xl']) }}></div>
+    <div aria-hidden="true" {{ $attributes->twClass([$base, $shape === 'circle' ? 'size-10 rounded-full' : 'h-20 w-full rounded-xl']) }}></div>
 @endif

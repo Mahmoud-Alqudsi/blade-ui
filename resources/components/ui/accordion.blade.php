@@ -24,6 +24,6 @@
              }
          },
      }"
-     {{ $attributes->class('divide-y divide-slate-200 overflow-hidden rounded-2xl border border-slate-200 bg-white dark:divide-slate-800 dark:border-slate-800 dark:bg-slate-900') }}>
+     {{ $attributes->twClass('divide-y divide-slate-200 overflow-hidden rounded-2xl border border-slate-200 bg-white dark:divide-slate-800 dark:border-slate-800 dark:bg-slate-900') }}>
     {{ $slot }}
 </div>

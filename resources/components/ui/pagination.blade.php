@@ -53,7 +53,7 @@
 
 @if ($paginator->hasPages())
     <nav role="navigation" aria-label="{{ $navLabel }}"
-         {{ $attributes->class('flex flex-col items-center justify-between gap-3 sm:flex-row') }}>
+         {{ $attributes->twClass('flex flex-col items-center justify-between gap-3 sm:flex-row') }}>
         @if ($isLengthAware && $showSummary)
             <p class="text-sm text-slate-600 dark:text-slate-400">
                 {{ __('blade-ui::messages.showing', ['from' => $paginator->firstItem(), 'to' => $paginator->lastItem(), 'total' => $paginator->total()]) }}

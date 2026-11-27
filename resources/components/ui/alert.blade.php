@@ -49,7 +49,7 @@
          x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0"
      @endif
      role="{{ $role }}"
-     {{ $attributes->class(['flex items-start gap-3 rounded-xl border p-4 text-sm', $style['box']]) }}>
+     {{ $attributes->twClass(['flex items-start gap-3 rounded-xl border p-4 text-sm', $style['box']]) }}>
     <x-blade-ui::ui.icon :name="$style['name']" :class="$style['icon']" />
 
     <div class="min-w-0 flex-1 space-y-1">

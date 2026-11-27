@@ -51,7 +51,7 @@
             'disabled' => $disabled,
             'aria-invalid' => $hasError ? 'true' : null,
             'aria-describedby' => $describedBy ?: null,
-        ])->class('peer sr-only') }}>
+        ])->twClass('peer sr-only') }}>
 
         <span aria-hidden="true"
               class="relative mt-0.5 h-6 w-11 shrink-0 rounded-full bg-slate-300 transition-colors duration-200 motion-reduce:transition-none dark:bg-slate-700

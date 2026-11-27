@@ -16,7 +16,7 @@
         : 'text-slate-700 hover:bg-slate-100 dark:text-slate-200 dark:hover:bg-slate-800';
 @endphp
 
-<{{ $tag }} role="menuitem" {{ $attributes->merge($href ? ['href' => $href] : ['type' => $type])->class([
+<{{ $tag }} role="menuitem" {{ $attributes->merge($href ? ['href' => $href] : ['type' => $type])->twClass([
     'flex w-full items-center gap-2 rounded-lg px-3 py-2 text-start text-sm transition-colors',
     'focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-brand-500',
     $tone,

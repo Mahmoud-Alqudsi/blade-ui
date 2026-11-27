@@ -42,6 +42,6 @@
 
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
      stroke-width="{{ $stroke }}" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"
-     {{ $attributes->class([$size, 'shrink-0']) }}>
+     {{ $attributes->twClass([$size, 'shrink-0']) }}>
     <path d="{{ $paths[$name] ?? $paths['information-circle'] }}" />
 </svg>

@@ -39,6 +39,18 @@ return [
 
     /*
     |--------------------------------------------------------------------------
+    | Tailwind class conflict resolution for caller-supplied classes
+    |--------------------------------------------------------------------------
+    | 'auto' : enabled automatically when stamat/tailwind-merge-php is installed (default)
+    | true   : required (boot fails if the package is not installed)
+    | false  : disabled (caller classes are appended without conflict resolution)
+    |
+    | To use a custom merger implementation, bind BladeUi\Support\ClassMerger in the container.
+    */
+    'merge_classes' => env('BLADE_UI_MERGE_CLASSES', 'auto'),
+
+    /*
+    |--------------------------------------------------------------------------
     | Pagination
     |--------------------------------------------------------------------------
     | true: makes ->links() use the ui/pagination component throughout the application.

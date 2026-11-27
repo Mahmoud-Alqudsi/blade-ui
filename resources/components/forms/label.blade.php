@@ -9,7 +9,7 @@
 --}}
 @props(['for' => null, 'required' => false])
 
-<label {{ $attributes->merge(['for' => $for])->class('block text-sm font-medium text-slate-700 dark:text-slate-200') }}>
+<label {{ $attributes->merge(['for' => $for])->twClass('block text-sm font-medium text-slate-700 dark:text-slate-200') }}>
     {{ $slot }}
     @if ($required)
         <span class="ms-0.5 text-red-600 dark:text-red-400" aria-hidden="true">*</span>

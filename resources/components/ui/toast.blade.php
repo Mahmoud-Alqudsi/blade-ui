@@ -35,7 +35,7 @@
      }"
      x-on:toast.window="add($event.detail)"
      aria-live="polite" aria-atomic="false"
-     {{ $attributes->class('pointer-events-none fixed bottom-4 end-4 z-[60] flex w-full max-w-sm flex-col gap-2') }}>
+     {{ $attributes->twClass('pointer-events-none fixed bottom-4 end-4 z-[60] flex w-full max-w-sm flex-col gap-2') }}>
     <template x-for="item in items" x-bind:key="item.id">
         <div role="status"
              x-bind:class="styles[item.type] ?? styles.info"

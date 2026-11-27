@@ -24,7 +24,7 @@
     $hasFoot = isset($foot) && $foot->isNotEmpty();
 @endphp
 
-<div {{ $attributes->class('overflow-x-auto rounded-2xl border border-slate-200 bg-white dark:border-slate-800 dark:bg-slate-900') }}>
+<div {{ $attributes->twClass('overflow-x-auto rounded-2xl border border-slate-200 bg-white dark:border-slate-800 dark:bg-slate-900') }}>
     <table @class(['w-full text-start text-sm text-slate-700 dark:text-slate-200', $cellPadding, '[&_th]:text-start'])>
         @if ($caption)
             <caption class="sr-only">{{ $caption }}</caption>

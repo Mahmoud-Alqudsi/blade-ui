@@ -10,6 +10,6 @@
      x-show="active === @js((string) $name)"
      x-bind:id="uid + '-panel-' + @js((string) $name)"
      x-bind:aria-labelledby="uid + '-tab-' + @js((string) $name)"
-     {{ $attributes->class('text-sm text-slate-600 focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-brand-500 dark:text-slate-300') }}>
+     {{ $attributes->twClass('text-sm text-slate-600 focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-brand-500 dark:text-slate-300') }}>
     {{ $slot }}
 </div>

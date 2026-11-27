@@ -30,7 +30,7 @@
 
     <span id="{{ $tipId }}" role="tooltip" x-show="open" x-cloak
           x-transition.opacity.duration.100ms
-          {{ $attributes->class(['pointer-events-none absolute z-40 whitespace-nowrap rounded-md bg-slate-900 px-2.5 py-1.5 text-xs font-medium text-white shadow-md dark:bg-slate-700', $positionClass]) }}>
+          {{ $attributes->twClass(['pointer-events-none absolute z-40 whitespace-nowrap rounded-md bg-slate-900 px-2.5 py-1.5 text-xs font-medium text-white shadow-md dark:bg-slate-700', $positionClass]) }}>
         {{ $text }}
     </span>
 </span>
