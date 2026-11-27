@@ -1,0 +1,5 @@
+@import "tailwindcss";
+@import "../../resources/css/blade-ui.css";
+
+/* Generated fixture pages (the page wrapper itself uses utilities such as dark:bg-slate-950). */
+@source "./dist/*.html";

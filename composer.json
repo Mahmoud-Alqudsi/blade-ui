@@ -58,7 +58,11 @@
         }
     },
     "scripts": {
-        "test": "pest"
+        "test": "pest",
+        "fixtures": [
+            "@putenv BLADE_UI_FIXTURES=1",
+            "pest tests/Feature/Browser/FixturesTest.php"
+        ]
     },
     "config": {
         "sort-packages": true,
