@@ -43,10 +43,10 @@
     $currentValue = $type === 'password' ? null : ($key ? old($key, $value) : $value);
 
     $fieldClass = [
-        'block w-full rounded-lg border bg-white py-2.5 text-sm text-slate-900 shadow-xs transition-colors placeholder:text-slate-400',
+        'block w-full rounded-lg border bg-white py-2.5 text-sm text-slate-900 shadow-xs transition-colors placeholder:text-slate-500',
         'focus-visible:outline-hidden focus-visible:ring-2',
         'disabled:cursor-not-allowed disabled:bg-slate-50 disabled:text-slate-500',
-        'dark:bg-slate-900 dark:text-slate-100 dark:placeholder:text-slate-500 dark:disabled:bg-slate-800/60',
+        'dark:bg-slate-900 dark:text-slate-100 dark:placeholder:text-slate-400 dark:disabled:bg-slate-800/60',
         $hasLeft ? 'ps-10' : 'ps-3.5',
         $hasRight ? 'pe-10' : 'pe-3.5',
         $hasError
@@ -62,7 +62,7 @@
 
     <div class="relative">
         @if ($hasLeft)
-            <span class="pointer-events-none absolute inset-y-0 start-0 flex items-center ps-3 text-slate-400 dark:text-slate-500">{{ $iconLeft }}</span>
+            <span class="pointer-events-none absolute inset-y-0 start-0 flex items-center ps-3 text-slate-500 dark:text-slate-400">{{ $iconLeft }}</span>
         @endif
 
         <input {{ $attributes->merge([
@@ -77,7 +77,7 @@
         ])->class($fieldClass) }}>
 
         @if ($hasRight)
-            <span class="absolute inset-y-0 end-0 flex items-center pe-3 text-slate-400 dark:text-slate-500">{{ $iconRight }}</span>
+            <span class="absolute inset-y-0 end-0 flex items-center pe-3 text-slate-500 dark:text-slate-400">{{ $iconRight }}</span>
         @endif
     </div>
 

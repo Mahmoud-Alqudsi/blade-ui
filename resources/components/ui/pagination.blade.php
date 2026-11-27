@@ -65,9 +65,9 @@
         <ul class="flex items-center gap-1">
             <li>
                 @if ($paginator->onFirstPage())
-                    <span aria-disabled="true" aria-label="{{ $prevLabel }}" class="{{ $itemBase }} {{ $disabledClass }}">
+                    <a role="link" aria-disabled="true" aria-label="{{ $prevLabel }}" class="{{ $itemBase }} {{ $disabledClass }}">
                         <x-ui.icon name="chevron-left" size="size-4" class="rtl:rotate-180" />
-                    </span>
+                    </a>
                 @else
                     <a href="{{ $paginator->previousPageUrl() }}" rel="prev" aria-label="{{ $prevLabel }}" class="{{ $itemBase }} {{ $linkClass }}">
                         <x-ui.icon name="chevron-left" size="size-4" class="rtl:rotate-180" />
@@ -93,9 +93,9 @@
                         <x-ui.icon name="chevron-right" size="size-4" class="rtl:rotate-180" />
                     </a>
                 @else
-                    <span aria-disabled="true" aria-label="{{ $nextLabel }}" class="{{ $itemBase }} {{ $disabledClass }}">
+                    <a role="link" aria-disabled="true" aria-label="{{ $nextLabel }}" class="{{ $itemBase }} {{ $disabledClass }}">
                         <x-ui.icon name="chevron-right" size="size-4" class="rtl:rotate-180" />
-                    </span>
+                    </a>
                 @endif
             </li>
         </ul>

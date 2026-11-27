@@ -12,7 +12,7 @@
                 x-on:click="toggle(id)"
                 class="flex w-full items-center justify-between gap-4 px-5 py-4 text-start text-sm font-medium text-slate-900 transition-colors hover:bg-slate-50 focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-brand-500 dark:text-slate-100 dark:hover:bg-slate-800/50">
             {{ $title }}
-            <x-ui.icon name="chevron-down" size="size-5" class="text-slate-400 transition-transform motion-reduce:transition-none"
+            <x-ui.icon name="chevron-down" size="size-5" class="text-slate-500 transition-transform motion-reduce:transition-none dark:text-slate-400"
                        x-bind:class="isOpen(id) ? 'rotate-180' : ''" />
         </button>
     </h3>

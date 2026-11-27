@@ -17,10 +17,10 @@
     $percent = $max > 0 ? (int) min(100, max(0, round($value / $max * 100))) : 0;
 
     $barClass = match ($variant) {
-        'success' => 'bg-emerald-500',
-        'warning' => 'bg-amber-500',
-        'danger' => 'bg-red-500',
-        default => 'bg-brand-600',
+        'success' => 'bg-emerald-700 dark:bg-emerald-500',
+        'warning' => 'bg-amber-700 dark:bg-amber-500',
+        'danger' => 'bg-red-600 dark:bg-red-500',
+        default => 'bg-brand-600 dark:bg-brand-500',
     };
 
     $heightClass = match ($size) {
@@ -46,7 +46,7 @@
 
     <div role="progressbar" aria-valuemin="0" aria-valuemax="{{ $max }}"
          @unless ($indeterminate) aria-valuenow="{{ $value }}" @endunless
-         @if ($label) aria-labelledby="{{ $labelId }}" @endif
+         @if ($label) aria-labelledby="{{ $labelId }}" @else aria-label="{{ __('blade-ui::messages.progress') }}" @endif
          class="w-full overflow-hidden rounded-full bg-slate-200 dark:bg-slate-800 {{ $heightClass }}">
         <div @class([
                 'h-full rounded-full transition-[width] duration-300 motion-reduce:transition-none',

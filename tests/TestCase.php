@@ -12,6 +12,7 @@ abstract class TestCase extends Orchestra
 
     protected function defineEnvironment($app): void
     {
+        // Existing component tests expect Arabic default strings.
         $app['config']->set('app.locale', 'ar');
         $app['config']->set('app.fallback_locale', 'en');
     }

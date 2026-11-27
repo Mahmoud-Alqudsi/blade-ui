@@ -5,7 +5,7 @@ it('renders a stat card with a colored trend', function () {
         ->assertSee('المبيعات')
         ->assertSee('500')
         ->assertSee('+12%')
-        ->assertSee('text-emerald-600', false)
+        ->assertSee('text-emerald-700', false)
         ->assertSee('عن الشهر الماضي');
 });
 

@@ -13,7 +13,7 @@
 | Close: $dispatch('close-modal-confirm')
 | Traps focus inside the dialog and locks page scrolling (x-trap.noscroll).
 --}}
-@props(['name', 'title' => null, 'maxWidth' => 'md', 'closeable' => true, 'show' => false, 'closeLabel' => null])
+@props(['name', 'title' => null, 'maxWidth' => 'md', 'closeable' => true, 'show' => false, 'closeLabel' => null, 'label' => null])
 
 @php
     $closeLabel ??= __('blade-ui::messages.close');
@@ -38,7 +38,8 @@
      x-on:close-modal-{{ $name }}.window="show = false"
      x-on:keydown.escape.window="if (closeable) show = false"
      class="fixed inset-0 z-50 flex items-end justify-center overflow-y-auto px-4 py-6 sm:items-center"
-     role="dialog" aria-modal="true" @if ($title) aria-labelledby="{{ $titleId }}" @endif>
+     role="dialog" aria-modal="true"
+     @if ($title) aria-labelledby="{{ $titleId }}" @else aria-label="{{ $label ?? $name }}" @endif>
 
     {{-- Backdrop --}}
     <div x-show="show" aria-hidden="true"

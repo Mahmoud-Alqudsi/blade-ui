@@ -15,7 +15,7 @@
 
 @php
     $trendClass = match ($trend) {
-        'up' => 'text-emerald-600 dark:text-emerald-400',
+        'up' => 'text-emerald-700 dark:text-emerald-400',
         'down' => 'text-red-600 dark:text-red-400',
         default => 'text-slate-500 dark:text-slate-400',
     };

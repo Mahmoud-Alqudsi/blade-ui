@@ -168,9 +168,9 @@
                 @if ($describedBy) aria-describedby="{{ $describedBy }}" @endif
                 @class($triggerClass)>
             <span x-text="displayLabel || @js($placeholder)"
-                  x-bind:class="displayLabel ? 'text-slate-900 dark:text-slate-100' : 'text-slate-400 dark:text-slate-500'"
+                  x-bind:class="displayLabel ? 'text-slate-900 dark:text-slate-100' : 'text-slate-500 dark:text-slate-400'"
                   class="truncate"></span>
-            <x-ui.icon name="calendar" size="size-5" class="text-slate-400 dark:text-slate-500" />
+            <x-ui.icon name="calendar" size="size-5" class="text-slate-500 dark:text-slate-400" />
         </button>
 
         <div x-show="open" x-cloak id="{{ $id }}-calendar" role="dialog" aria-label="{{ $label ?? $placeholder }}"

@@ -7,6 +7,7 @@ return [
     'toggle_dark_mode' => 'Toggle dark mode',
     'breadcrumb' => 'Breadcrumb',
     'steps' => 'Progress steps',
+    'progress' => 'Progress',
     'completed' => 'Completed',
 
     // Pagination

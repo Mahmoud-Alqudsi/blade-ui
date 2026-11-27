@@ -12,7 +12,7 @@
 | Open: $dispatch('open-drawer-filters'); close: $dispatch('close-drawer-filters')
 | Traps focus and locks page scrolling, like the modal component.
 --}}
-@props(['name', 'title' => null, 'side' => 'end', 'width' => 'md', 'closeable' => true, 'show' => false, 'closeLabel' => null])
+@props(['name', 'title' => null, 'side' => 'end', 'width' => 'md', 'closeable' => true, 'show' => false, 'closeLabel' => null, 'label' => null])
 
 @php
     $closeLabel ??= __('blade-ui::messages.close');
@@ -41,7 +41,8 @@
      x-on:close-drawer-{{ $name }}.window="show = false"
      x-on:keydown.escape.window="if (closeable) show = false"
      class="fixed inset-0 z-50"
-     role="dialog" aria-modal="true" @if ($title) aria-labelledby="{{ $titleId }}" @endif>
+     role="dialog" aria-modal="true"
+     @if ($title) aria-labelledby="{{ $titleId }}" @else aria-label="{{ $label ?? $name }}" @endif>
 
     <div x-show="show" aria-hidden="true"
          x-transition:enter="transition ease-out duration-200 motion-reduce:transition-none"

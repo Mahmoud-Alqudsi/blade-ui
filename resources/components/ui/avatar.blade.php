@@ -39,7 +39,7 @@
     $label = $name ?: $alt;
 @endphp
 
-<span x-data="{ failed: false }" role="img" @if ($label) aria-label="{{ $label }}" @endif
+<span x-data="{ failed: false }" @if ($label) role="img" aria-label="{{ $label }}" @else aria-hidden="true" @endif
       {{ $attributes->class(['relative inline-flex shrink-0', $sizeClass]) }}>
     @if ($src)
         <img src="{{ $src }}" alt="" x-show="!failed" x-on:error="failed = true"
