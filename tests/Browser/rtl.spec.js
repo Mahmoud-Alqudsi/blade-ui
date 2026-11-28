@@ -7,7 +7,7 @@ test.describe('logical layout (RTL / LTR)', () => {
             await open(page, 'forms', { dir });
 
             const field = await page.locator('#input-search').boundingBox();
-            const icon = await page.locator('#input-search').locator('xpath=preceding-sibling::span[1]//svg').boundingBox();
+            const icon = await page.locator('#input-search').locator('xpath=preceding-sibling::span[1]').locator('svg').boundingBox();
 
             if (dir === 'ltr') {
                 expect(icon.x - field.x).toBeLessThan(24);

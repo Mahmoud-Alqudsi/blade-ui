@@ -63,6 +63,8 @@ for (const mode of directions) {
 
             const trigger = page.getByRole('button', { name: 'Account' });
             await trigger.click();
+            await expect(page.getByRole('menu')).toBeVisible();
+            await page.waitForTimeout(150);
 
             const triggerBox = await trigger.boundingBox();
             const panelBox = await page.getByRole('menu').boundingBox();

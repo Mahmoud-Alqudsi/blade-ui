@@ -28,7 +28,7 @@ for (const mode of directions) {
             await open(page, 'feedback', mode);
 
             await page.getByRole('button', { name: 'Show sticky toast' }).click();
-            const toast = page.getByText('Sticky toast');
+            const toast = page.getByText('Sticky toast', { exact: true });
             await expect(toast).toBeVisible();
 
             await page.locator('[aria-live=polite]').getByRole('button', { name: 'Close' }).click();
@@ -39,7 +39,9 @@ for (const mode of directions) {
             await open(page, 'feedback', mode);
 
             await page.getByRole('button', { name: 'Show sticky toast' }).click();
-            const box = await page.getByText('Sticky toast').boundingBox();
+            const toast = page.getByText('Sticky toast', { exact: true });
+            await expect(toast).toBeVisible();
+            const box = await toast.boundingBox();
             const viewport = page.viewportSize();
 
             if (mode.dir === 'ltr') {

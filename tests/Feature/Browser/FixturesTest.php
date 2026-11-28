@@ -22,6 +22,8 @@ it('renders the browser fixture pages', function () {
     $errors = (new ViewErrorBag)->put('default', new MessageBag(['email' => ['The email address is invalid.']]));
     $paginator = new LengthAwarePaginator(collect(range(1, 10)), 120, 10, 6, ['path' => '/users']);
 
+    view()->share('errors', $errors);
+
     $pages = [
 
         'modal' => <<<'BLADE'
@@ -197,7 +199,7 @@ it('renders the browser fixture pages', function () {
     $page = fn (string $title, string $body) => '<!DOCTYPE html><html lang="en" dir="ltr"><head><meta charset="utf-8">'
         .'<meta name="viewport" content="width=device-width, initial-scale=1"><title>'.$title.'</title>'
         .'<link rel="stylesheet" href="/app.css"><script defer src="/app.js"></script></head>'
-        .'<body class="min-h-screen bg-white p-6 text-slate-900 dark:bg-slate-950 dark:text-slate-100">'
+        .'<body x-data class="min-h-screen bg-white p-6 text-slate-900 dark:bg-slate-950 dark:text-slate-100">'
         .'<main class="mx-auto max-w-3xl">'.$body.'</main></body></html>';
 
     foreach ($pages as $name => $template) {
@@ -208,4 +210,6 @@ it('renders the browser fixture pages', function () {
         expect(file_exists("{$dist}/{$name}.html"))->toBeTrue()
             ->and(strlen($html))->toBeGreaterThan(50);
     }
+
+    view()->share('errors', new ViewErrorBag);
 })->skip(! getenv('BLADE_UI_FIXTURES'), 'Set BLADE_UI_FIXTURES=1 (composer fixtures) to generate browser test fixture pages.');

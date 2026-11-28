@@ -82,7 +82,7 @@ const scenarios = [
         page: 'feedback',
         setup: async (page) => {
             await page.getByRole('button', { name: 'Show sticky toast' }).click();
-            await expect(page.getByText('Sticky toast')).toBeVisible();
+            await expect(page.getByText('Sticky toast', { exact: true })).toBeVisible();
         },
     },
 ];

@@ -49,12 +49,12 @@ for (const mode of directions) {
             await expect(one).toHaveAttribute('aria-expanded', 'false');
             await one.click();
             await expect(one).toHaveAttribute('aria-expanded', 'true');
-            await expect(page.getByText('Answer one')).toBeVisible();
+            await expect(page.getByText('Answer one', { exact: true })).toBeVisible();
 
             await two.click();
             await expect(two).toHaveAttribute('aria-expanded', 'true');
             await expect(one).toHaveAttribute('aria-expanded', 'false');
-            await expect(page.getByText('Answer one')).toBeHidden();
+            await expect(page.getByText('Answer one', { exact: true })).toBeHidden();
         });
 
         test('multiple mode allows several items open and toggling closed', async ({ page }) => {
